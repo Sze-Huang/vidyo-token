@@ -16,4 +16,4 @@ DeveloperKey and ApplicationID are "static" in your application. You will also n
 * __expiresInSeconds__
 
 Use following curl command:
-> curl -H "Content-Type: application/json" -X POST https://d5zhlviy0b.execute-api.us-east-1.amazonaws.com/dev/token_generate -d '{"key": "xxxx", "appID": "xxxx.vidyo.io", "userName": "xxx", "expiresInSecs": "999999999"}'
+> curl -H "Content-Type: application/json" -X POST https://trro08dgr7.execute-api.us-east-1.amazonaws.com/dev/token_generate -d '{"key": "xxxx", "appID": "xxxx.vidyo.io", "userName": "xxx", "expiresInSecs": "999999999"}'

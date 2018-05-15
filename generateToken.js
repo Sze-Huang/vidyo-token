@@ -12,33 +12,23 @@ const USERS_TABLE = process.env.USERS_TABLE;
 
 const timestamp = new Date().getTime();
 
-// const IS_OFFLINE = process.env.IS_OFFLINE;
-// let dynamoDb;
-// if (IS_OFFLINE === 'true') {
-//   dynamoDb = new AWS.DynamoDB.DocumentClient({
-//     region: 'localhost',
-//     endpoint: 'http://localhost:8000'
-//   })
-//   console.log(dynamoDb);
-// } else {
-//   dynamoDb = new AWS.DynamoDB.DocumentClient();
-// };
+const IS_OFFLINE = process.env.IS_OFFLINE;
+let dynamoDb;
+if (IS_OFFLINE === 'true') {
+  dynamoDb = new AWS.DynamoDB.DocumentClient({
+    region: 'localhost',
+    endpoint: 'http://localhost:8000'
+  })
+  console.log(dynamoDb);
+} else {
+  dynamoDb = new AWS.DynamoDB.DocumentClient();
+};
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+// const dynamoDb = new AWS.DynamoDB.DocumentClient();
 app.use(bodyParser.json({ strict: false }));
 
-var text = "To connect to Vidyo.io, the VidyoClient SDK needs to pass a token. A token is a short-lived authentication credential that grants access to the Vidyo.io service on behalf of the developer to a specific user. \
-            When an endpoint requests access to the service, your application backend should generate a token and pass it on to the client application. \
-            \r\nDeveloperKey and ApplicationID are 'static' in your application. You will also need to provide a user name and an expiration time whenever you need to generate a token for a user. \
-            \r\n--key \
-            \r\n--appID \
-            \r\n--userName \
-            \r\n--expiresInSeconds \
-            \r\n\r\nuse following command: \
-            \r\ncurl -H \"Content-Type: application/json\" -X POST https://d5zhlviy0b.execute-api.us-east-1.amazonaws.com/dev/token_generate -d '{\"key\": \"xxxx\", \"appID\": \"xxxx.vidyo.io\", \"userName\": \"xxx\", \"expiresInSecs\": \"999999999\"}'\
-            ";
 app.get('/', function (req, res) {
-  res.send(text);
+  res.send("Hi sls!");
 })
 
 // // Get User endpoint
@@ -221,7 +211,6 @@ app.post('/token_generate', function (req, res) {
       res.status(400).json({ error: 'Could not generate token' });
     }
     res.json({ key, appID, userName, token });
-	
   });
   
 })

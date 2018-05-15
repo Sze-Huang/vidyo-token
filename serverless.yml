@@ -2,15 +2,15 @@
 
 service: vidyo-token
 
-# plugins:
-#   - serverless-dynamodb-local
-#   - serverless-offline
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline
 
 custom:
   tableName: 'token-table-${self:provider.stage}'
-  # dynamodb:
-  #   start:
-  #     migrate: true
+  dynamodb:
+    start:
+      migrate: true
 
 provider:
   name: aws
@@ -53,11 +53,11 @@ resources:
       Properties:
         AttributeDefinitions:
           -
-            AttributeName: key
+            AttributeName: appID
             AttributeType: S
         KeySchema:
           -
-            AttributeName: key
+            AttributeName: appID
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1

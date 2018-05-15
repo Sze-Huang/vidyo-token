@@ -157,7 +157,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vidyo-token/dev/1526349279888-2018-05-15T01:54:39.888Z/vidyo-token.zip"
+                "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
               },
               "FunctionName": "vidyo-token-dev-app",
               "Handler": "generateToken.handler",
@@ -181,14 +181,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersiongFUytxeKFIEcqKekNbSz6Ycruzk3E1rICEpxNymME": {
+          "AppLambdaVersionLcLSCElDtOTTiYdT0Tg2hNDsIutaQekMoiIXaaFtTg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "m4b2BqQR5+RX0oaMB11oFt09EI0hALkQbfgi3n7wWAg="
+              "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
             }
           },
           "GetUserLambdaFunction": {
@@ -198,7 +198,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vidyo-token/dev/1526349279888-2018-05-15T01:54:39.888Z/vidyo-token.zip"
+                "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
               },
               "FunctionName": "vidyo-token-dev-getUser",
               "Handler": "generateToken.handler",
@@ -222,14 +222,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetUserLambdaVersionX0JTPksp55H8xGWxSN0S7qpRMX1TEqewTPDEXIjg4": {
+          "GetUserLambdaVersionhy51pVuvChOyawTUL7pcCumDn2LFTmwTFOU2JoKUw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUserLambdaFunction"
               },
-              "CodeSha256": "m4b2BqQR5+RX0oaMB11oFt09EI0hALkQbfgi3n7wWAg="
+              "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
             }
           },
           "GenerateTokenLambdaFunction": {
@@ -239,7 +239,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vidyo-token/dev/1526349279888-2018-05-15T01:54:39.888Z/vidyo-token.zip"
+                "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
               },
               "FunctionName": "vidyo-token-dev-generateToken",
               "Handler": "generateToken.handler",
@@ -263,14 +263,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GenerateTokenLambdaVersionl1llTmvDpoU1yo6IJ9r4lOG8DqupNDjjS6bGFc": {
+          "GenerateTokenLambdaVersionFE3H2feKCVEeKgQ1hQ6hzcZedPVAjsoYbFK71DiJns": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GenerateTokenLambdaFunction"
               },
-              "CodeSha256": "m4b2BqQR5+RX0oaMB11oFt09EI0hALkQbfgi3n7wWAg="
+              "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
             }
           },
           "ApiGatewayRestApi": {
@@ -516,7 +516,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1526349280593": {
+          "ApiGatewayDeployment1526353633926": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -677,13 +677,13 @@
             "Properties": {
               "AttributeDefinitions": [
                 {
-                  "AttributeName": "key",
+                  "AttributeName": "appID",
                   "AttributeType": "S"
                 }
               ],
               "KeySchema": [
                 {
-                  "AttributeName": "key",
+                  "AttributeName": "appID",
                   "KeyType": "HASH"
                 }
               ],
@@ -704,19 +704,19 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersiongFUytxeKFIEcqKekNbSz6Ycruzk3E1rICEpxNymME"
+              "Ref": "AppLambdaVersionLcLSCElDtOTTiYdT0Tg2hNDsIutaQekMoiIXaaFtTg"
             }
           },
           "GetUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUserLambdaVersionX0JTPksp55H8xGWxSN0S7qpRMX1TEqewTPDEXIjg4"
+              "Ref": "GetUserLambdaVersionhy51pVuvChOyawTUL7pcCumDn2LFTmwTFOU2JoKUw"
             }
           },
           "GenerateTokenLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GenerateTokenLambdaVersionl1llTmvDpoU1yo6IJ9r4lOG8DqupNDjjS6bGFc"
+              "Ref": "GenerateTokenLambdaVersionFE3H2feKCVEeKgQ1hQ6hzcZedPVAjsoYbFK71DiJns"
             }
           },
           "ServiceEndpoint": {
@@ -759,8 +759,17 @@
       "vpc": {}
     },
     "custom": {
-      "tableName": "token-table-dev"
+      "tableName": "token-table-dev",
+      "dynamodb": {
+        "start": {
+          "migrate": true
+        }
+      }
     },
+    "plugins": [
+      "serverless-dynamodb-local",
+      "serverless-offline"
+    ],
     "functions": {
       "app": {
         "handler": "generateToken.handler",
@@ -806,13 +815,13 @@
           "Properties": {
             "AttributeDefinitions": [
               {
-                "AttributeName": "key",
+                "AttributeName": "appID",
                 "AttributeType": "S"
               }
             ],
             "KeySchema": [
               {
-                "AttributeName": "key",
+                "AttributeName": "appID",
                 "KeyType": "HASH"
               }
             ],
@@ -829,7 +838,7 @@
     "artifact": "C:\\Users\\huang\\Documents\\GitHub\\vidyo-token\\.serverless\\vidyo-token.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/vidyo-token/dev/1526349279888-2018-05-15T01:54:39.888Z",
+    "artifactDirectoryName": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z",
     "artifact": "vidyo-token.zip"
   }
 }

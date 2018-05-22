@@ -10,7 +10,7 @@ const AWS = require('aws-sdk');
 
 const USERS_TABLE = process.env.USERS_TABLE;
 
-const timestamp = new Date(date);
+var timestamp = new Date();
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 let dynamoDb;
@@ -143,13 +143,14 @@ app.post('/token_generate', function (req, res) {
 	} else {
 		console.log("Error: Neither expiresInSecs or expiresAt parameters passed in");
 	}	
-	
+
+	console.log("timestamp:" + timestamp);
   const params = {
     TableName: USERS_TABLE,
     Item: {
       appID: appID,
 	  userName: userName,
-	  timestamp: timestamp,
+	  timestamp: timestamp.toString(),
       token: token,
     },
   };
@@ -159,7 +160,7 @@ app.post('/token_generate', function (req, res) {
       console.log(error);
       res.status(400).json({ error: 'Could not generate token' });
     }
-    res.json({ key, appID, userName, token });
+    res.json({ key, appID, userName, token, timestamp });
   });
   
 })

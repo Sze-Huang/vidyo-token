@@ -53,11 +53,11 @@ resources:
       Properties:
         AttributeDefinitions:
           -
-            AttributeName: appID
+            AttributeName: timestamp
             AttributeType: S
         KeySchema:
           -
-            AttributeName: appID
+            AttributeName: timestamp
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1

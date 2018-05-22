@@ -135,7 +135,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
+          "S3Key": "serverless/vidyo-token/dev/1527011841877-2018-05-22T17:57:21.877Z/vidyo-token.zip"
         },
         "FunctionName": "vidyo-token-dev-app",
         "Handler": "generateToken.handler",
@@ -159,14 +159,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersionLcLSCElDtOTTiYdT0Tg2hNDsIutaQekMoiIXaaFtTg": {
+    "AppLambdaVersion66rZ0tsGaeNNG5u4LajI64mnC0Jc0hMAdSnQHoFIw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
+        "CodeSha256": "RxbZicBIgvQ32yGLVLvDxLXMyGR7qbqdMJ8KDJNhYzs="
       }
     },
     "GetUserLambdaFunction": {
@@ -176,7 +176,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
+          "S3Key": "serverless/vidyo-token/dev/1527011841877-2018-05-22T17:57:21.877Z/vidyo-token.zip"
         },
         "FunctionName": "vidyo-token-dev-getUser",
         "Handler": "generateToken.handler",
@@ -200,14 +200,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetUserLambdaVersionhy51pVuvChOyawTUL7pcCumDn2LFTmwTFOU2JoKUw": {
+    "GetUserLambdaVersionOQKZLKHITiWfq4soH4ydBiR8V8gLtrgGsVDGyyF4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserLambdaFunction"
         },
-        "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
+        "CodeSha256": "RxbZicBIgvQ32yGLVLvDxLXMyGR7qbqdMJ8KDJNhYzs="
       }
     },
     "GenerateTokenLambdaFunction": {
@@ -217,7 +217,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vidyo-token/dev/1526353633582-2018-05-15T03:07:13.582Z/vidyo-token.zip"
+          "S3Key": "serverless/vidyo-token/dev/1527011841877-2018-05-22T17:57:21.877Z/vidyo-token.zip"
         },
         "FunctionName": "vidyo-token-dev-generateToken",
         "Handler": "generateToken.handler",
@@ -241,14 +241,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GenerateTokenLambdaVersionFE3H2feKCVEeKgQ1hQ6hzcZedPVAjsoYbFK71DiJns": {
+    "GenerateTokenLambdaVersionFP5BlOaMW5AvEuZQFefyYmqF5KmQLWDAUQL6ajV9Mt4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GenerateTokenLambdaFunction"
         },
-        "CodeSha256": "5aFCQ7+TfKOr/6Lm6dpvQZ4lGvcxrqIDy0WAeYkP7z0="
+        "CodeSha256": "RxbZicBIgvQ32yGLVLvDxLXMyGR7qbqdMJ8KDJNhYzs="
       }
     },
     "ApiGatewayRestApi": {
@@ -494,7 +494,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1526353633926": {
+    "ApiGatewayDeployment1527011842209": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -655,13 +655,13 @@
       "Properties": {
         "AttributeDefinitions": [
           {
-            "AttributeName": "appID",
+            "AttributeName": "timestamp",
             "AttributeType": "S"
           }
         ],
         "KeySchema": [
           {
-            "AttributeName": "appID",
+            "AttributeName": "timestamp",
             "KeyType": "HASH"
           }
         ],
@@ -682,19 +682,19 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionLcLSCElDtOTTiYdT0Tg2hNDsIutaQekMoiIXaaFtTg"
+        "Ref": "AppLambdaVersion66rZ0tsGaeNNG5u4LajI64mnC0Jc0hMAdSnQHoFIw"
       }
     },
     "GetUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserLambdaVersionhy51pVuvChOyawTUL7pcCumDn2LFTmwTFOU2JoKUw"
+        "Ref": "GetUserLambdaVersionOQKZLKHITiWfq4soH4ydBiR8V8gLtrgGsVDGyyF4"
       }
     },
     "GenerateTokenLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GenerateTokenLambdaVersionFE3H2feKCVEeKgQ1hQ6hzcZedPVAjsoYbFK71DiJns"
+        "Ref": "GenerateTokenLambdaVersionFP5BlOaMW5AvEuZQFefyYmqF5KmQLWDAUQL6ajV9Mt4"
       }
     },
     "ServiceEndpoint": {

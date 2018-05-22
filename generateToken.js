@@ -10,7 +10,7 @@ const AWS = require('aws-sdk');
 
 const USERS_TABLE = process.env.USERS_TABLE;
 
-const timestamp = new Date().getTime();
+const timestamp = new Date(date);
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 let dynamoDb;
@@ -28,31 +28,8 @@ if (IS_OFFLINE === 'true') {
 app.use(bodyParser.json({ strict: false }));
 
 app.get('/', function (req, res) {
-  res.send("Hi sls!");
+  res.send("Vidyo Token Generation API! - https://szehuang.win/");
 })
-
-// // Get User endpoint
-// app.get('/users/:userId', function (req, res) {
-//   const params = {
-//     TableName: USERS_TABLE,
-//     Key: {
-//       userId: req.params.userId,
-//     },
-//   }
-
-//   dynamoDb.get(params, (error, result) => {
-//     if (error) {
-//       console.log(error);
-//       res.status(400).json({ error: 'Could not get user' });
-//     }
-//     if (result.Item) {
-//       const {userId, name} = result.Item;
-//       res.json({ userId, name });
-//     } else {
-//       res.status(404).json({ error: "User not found" });
-//     }
-//   });
-// })
 
 // Generate token, save variable
 app.post('/token_generate', function (req, res) {
@@ -80,34 +57,6 @@ app.post('/token_generate', function (req, res) {
 	// const commandLineArgs = require('command-line-args');
 	var tokenGenerated = false;
 	var vCardFileSpecified = false;
-
-	// const optionDefinitions = [{
-		// name: 'key',
-		// type: String
-	// }, {
-		// name: 'appID',
-		// type: String
-	// }, {
-		// name: 'userName',
-		// type: String
-	// }, {
-		// name: 'vCardFile',
-		// type: String
-	// }, {
-		// name: 'expiresInSecs',
-		// type: Number
-	// }, {
-		// name: 'expiresAt',
-		// type: String,
-		// multiple: true
-	// }, {
-		// name: 'help',
-		// alias: 'h',
-		// type: String
-	// }];
-	
-	
-	// const options = commandLineArgs(optionDefinitions);
 
 	function printHelp() {
 		console.log("\nThis script will generate a provision login token from a developer key" +
@@ -157,7 +106,7 @@ app.post('/token_generate', function (req, res) {
 		var serialized = body + '\0' + mac;
 		token = btoa(serialized);
 		console.log("\nGenerated Token: \n" + btoa(serialized) );
-		// res.send({msg:token});
+		
 	}
 
 	//Date is in the format: "October 13, 2014 11:13:00"
